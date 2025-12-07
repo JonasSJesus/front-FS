@@ -18,7 +18,11 @@ const Login: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const from = (location.state as { from?: { pathname: string } })?.from?.pathname || '/';
+  const from = (location.state as { from?: { pathname: string } })?.from?.pathname || '/login';
+
+  if (localStorage.getItem('currentUser')) {
+    navigate('/admin/empresas');
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
