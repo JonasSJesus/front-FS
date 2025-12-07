@@ -22,6 +22,8 @@ import {
 interface SidebarProps {
   collapsed: boolean;
   onToggle: () => void;
+  mobileOpen: boolean;
+  onMobileClose: () => void;
 }
 
 interface NavItem {
@@ -39,7 +41,7 @@ const navItems: NavItem[] = [
   { label: 'Questionários', icon: ClipboardList, path: '/admin/questionarios', roles: ['admin'] },
 ];
 
-export const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggle }) => {
+export const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggle, mobileOpen, onMobileClose }) => {
   const { user, logout, hasRole } = useAuth();
   const navigate = useNavigate();
 
@@ -59,12 +61,27 @@ export const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggle }) => {
   };
 
   return (
-    <aside
-      className={cn(
-        'fixed left-0 top-0 z-40 flex h-screen flex-col bg-sidebar transition-all duration-300',
-        collapsed ? 'w-20' : 'w-64'
+    <>
+      {/* Overlay para mobile */}
+      {mobileOpen && (
+        <div
+          className="fixed inset-0 z-40 bg-black/50 lg:hidden"
+          onClick={onMobileClose}
+        />
       )}
-    >
+
+      {/* Sidebar */}
+      <aside
+        className={cn(
+          'fixed left-0 top-0 z-50 flex h-screen flex-col bg-sidebar transition-all duration-300',
+          // Desktop
+          'hidden lg:flex',
+          collapsed ? 'lg:w-20' : 'lg:w-64',
+          // Mobile
+          mobileOpen && 'flex',
+          mobileOpen ? 'w-64' : 'w-0'
+        )}
+      >
       {/* Header */}
       <div className="flex h-16 items-center justify-between border-b border-sidebar-border px-4">
         <div className={cn('flex items-center gap-3', collapsed && 'justify-center w-full')}>
@@ -83,7 +100,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggle }) => {
           size="icon"
           onClick={onToggle}
           className={cn(
-            'h-8 w-8 text-sidebar-foreground/60 hover:bg-sidebar-accent hover:text-sidebar-foreground',
+            'hidden lg:flex h-8 w-8 text-sidebar-foreground/60 hover:bg-sidebar-accent hover:text-sidebar-foreground',
             collapsed && 'absolute -right-4 top-6 rounded-full bg-sidebar border border-sidebar-border'
           )}
         >
@@ -156,6 +173,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggle }) => {
           )}
         </Tooltip>
       </div>
-    </aside>
+      </aside>
+    </>
   );
 };
