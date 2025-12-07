@@ -3,13 +3,10 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { useAuth } from '@/contexts/AuthContext';
 import {
-  LayoutDashboard,
-  FileText,
   Users,
   Building2,
   HelpCircle,
   ClipboardList,
-  BarChart3,
   LogOut,
   Brain,
   ChevronLeft,
