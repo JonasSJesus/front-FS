@@ -14,6 +14,10 @@ Sistema web desenvolvido para monitorar e analisar o bem-estar psicológico de c
 
 - **Administrador**: Gerencia empresas, usuários e questionários
 
+#### Acesso com usuário mockado
+- email: admin@empresa.com
+- senha: admin123
+
 ## Tecnologias
 
 - **Frontend**: React + TypeScript + Vite
