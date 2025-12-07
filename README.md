@@ -25,7 +25,7 @@ Sistema web desenvolvido para monitorar e analisar o bem-estar psicológico de c
 
 ```sh
 # Clonar o repositório
-git clone <YOUR_GIT_URL>
+git clone https://github.com/JonasSJesus/front-FS.git
 
 # Instalar dependências
 npm i
