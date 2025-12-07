@@ -11,8 +11,6 @@ Sistema web desenvolvido para monitorar e analisar o bem-estar psicológico de c
 - **Relatórios Automatizados**: Geração de análises estatísticas e gráficos por setor
 - **Controle de Acesso**: Três níveis de usuário (Administrador, Gestor e Colaborador)
 - **Banco de Perguntas**: Sistema flexível para criação e gerenciamento de questionários
-- **Notificações**: Alertas automáticos para questionários pendentes e prazos
-- **Conformidade LGPD**: Total anonimização e proteção de dados pessoais
 
 ### Perfis de Usuário
 
@@ -29,7 +27,7 @@ Sistema web desenvolvido para monitorar e analisar o bem-estar psicológico de c
 
 ```sh
 # Clonar o repositório
-git clone <YOUR_GIT_URL>
+git clone https://github.com/JonasSJesus/front-FS.git
 
 # Instalar dependências
 npm i
