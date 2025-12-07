@@ -34,7 +34,7 @@ interface NavItem {
   roles: ('admin' | 'gestor' | 'usuario')[];
 }
 
-const navItems: NavItem[] = [  
+const navItems: NavItem[] = [
   // Admin
   { label: 'Empresas', icon: Building2, path: '/admin/empresas', roles: ['admin'] },
   { label: 'Usuários', icon: Users, path: '/admin/usuarios', roles: ['admin'] },
@@ -51,7 +51,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggle }) => {
     navigate('/login');
   };
 
-  const filteredNavItems = navItems.filter(item => 
+  const filteredNavItems = navItems.filter(item =>
     hasRole(item.roles)
   );
 
@@ -113,9 +113,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggle }) => {
                     to={item.path}
                     className={({ isActive }) =>
                       cn(
-                        'flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-200',
-                        isActive 
-                          ? 'bg-sidebar-primary text-sidebar-primary-foreground shadow-glow' 
+                        'flex items-center gap-3 rounded-lg px-1 py-1 text-sm font-medium transition-all duration-200',
+                        isActive
+                          ? 'bg-sidebar-primary text-sidebar-primary-foreground shadow-glow'
                           : 'text-sidebar-foreground/70 hover:bg-sidebar-accent hover:text-sidebar-foreground',
                         collapsed && 'justify-center'
                       )
