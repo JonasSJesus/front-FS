@@ -8,11 +8,7 @@ Sistema web desenvolvido para monitorar e analisar o bem-estar psicológico de c
 
 - **Gestão Multiempresa**: Suporte a múltiplas empresas com isolamento de dados
 - **Questionários Anônimos**: Coleta de dados sobre saúde mental preservando a privacidade dos colaboradores
-- **Relatórios Automatizados**: Geração de análises estatísticas e gráficos por setor
-- **Controle de Acesso**: Três níveis de usuário (Administrador, Gestor e Colaborador)
 - **Banco de Perguntas**: Sistema flexível para criação e gerenciamento de questionários
-- **Notificações**: Alertas automáticos para questionários pendentes e prazos
-- **Conformidade LGPD**: Total anonimização e proteção de dados pessoais
 
 ### Perfis de Usuário
 
