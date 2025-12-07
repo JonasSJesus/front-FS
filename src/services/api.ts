@@ -1,15 +1,3 @@
-/**
- * API Helper - Camada de abstração para chamadas à API
- * 
- * MOCK DATA - Para trocar por implementação real:
- * 1. Substituir as funções mock por chamadas fetch/axios reais
- * 2. Atualizar a baseURL para a URL da API real
- * 3. Remover os delays simulados
- * 
- * Credenciais de teste (MOCK):
- * - Admin: admin@empresa.com / admin123
- */
-
 import {
   User,
   Company,
